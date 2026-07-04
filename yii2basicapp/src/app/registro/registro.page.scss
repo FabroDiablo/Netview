@@ -1,0 +1,100 @@
+.registro-content {
+  --background: var(--ion-background-color);
+}
+
+.registro-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ── LOGO ────────────────────────────────────── */
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto 8px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.subtitulo {
+  color: var(--ion-color-medium);
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ── CAMPOS ──────────────────────────────────── */
+.campo {
+  --background: rgba(255, 255, 255, 0.05);
+  --border-radius: 8px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.errores {
+  margin: 4px 0 12px 4px;
+  min-height: 18px;
+
+  ion-note {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.btn-eye {
+  background: transparent;
+  border: none;
+  color: var(--ion-color-medium);
+  padding: 8px;
+  cursor: pointer;
+
+  ion-icon {
+    font-size: 20px;
+  }
+}
+
+/* ── BOTÓN PRINCIPAL ─────────────────────────── */
+.btn-submit {
+  margin-top: 24px;
+  --border-radius: 8px;
+  height: 48px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
+/* ── FOOTER ──────────────────────────────────── */
+.footer-registro {
+  margin-top: 32px;
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.footer-texto {
+  color: var(--ion-color-medium);
+  font-size: 14px;
+  margin: 0;
+
+  a {
+    color: var(--ion-color-netview);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

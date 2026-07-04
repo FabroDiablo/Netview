@@ -1,0 +1,75 @@
+<ion-content [fullscreen]="true" class="login-content">
+
+  <div class="login-wrapper">
+
+    <!-- Logo NETVIEW -->
+    <div class="logo-wrapper">
+      <img src="assets/logo-completo.png" alt="Netview" class="logo-img" />
+      <p class="subtitulo">Tu plataforma de streaming</p>
+    </div>
+
+    <!-- Formulario -->
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+      <!-- Usuario -->
+      <ion-item lines="none" class="campo">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input
+          type="text"
+          formControlName="username"
+          autocomplete="username"
+        ></ion-input>
+      </ion-item>
+      <div class="errores" *ngFor="let m of mensajes.username">
+        <ion-note color="danger" *ngIf="getError('username')[m.type]">
+          <ion-icon name="information-circle-outline"></ion-icon> {{ m.message }}
+        </ion-note>
+      </div>
+
+      <!-- Contraseña -->
+      <ion-item lines="none" class="campo">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input
+          [type]="tipoPassword"
+          formControlName="password"
+          clearOnEdit="false"
+          autocomplete="current-password"
+        ></ion-input>
+        <button
+          type="button"
+          slot="end"
+          class="btn-eye"
+          (click)="togglePassword()"
+        >
+          <ion-icon [name]="tipoPassword === 'text' ? 'eye-off' : 'eye'"></ion-icon>
+        </button>
+      </ion-item>
+      <div class="errores" *ngFor="let m of mensajes.password">
+        <ion-note color="danger" *ngIf="getError('password')[m.type]">
+          <ion-icon name="information-circle-outline"></ion-icon> {{ m.message }}
+        </ion-note>
+      </div>
+
+      <!-- Botón -->
+      <ion-button
+        type="submit"
+        expand="block"
+        color="netview"
+        class="btn-submit"
+        [disabled]="!loginForm.valid"
+      >
+        Iniciar sesión
+      </ion-button>
+    </form>
+
+    <!-- Footer -->
+    <div class="footer-login">
+      <p class="footer-texto">
+        ¿No tienes cuenta?
+        <a (click)="irRegistro()">Crear cuenta</a>
+      </p>
+    </div>
+
+  </div>
+
+</ion-content>

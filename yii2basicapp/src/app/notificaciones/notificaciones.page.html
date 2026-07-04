@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="netview">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Estado vacío con logo -->
+  <div class="empty-state">
+    <img src="assets/logo-icono.png" alt="Netview" class="empty-logo" />
+    <p class="empty-titulo">Sin notificaciones</p>
+    <p class="empty-texto">
+      Cuando tengamos novedades o nuevos contenidos, aparecerán aquí.
+    </p>
+    <ion-button color="netview" routerLink="/tabs/tab1">
+      <ion-icon name="home" slot="start"></ion-icon>
+      Volver al inicio
+    </ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,179 @@
+// =============================================================================
+//  NETVIEW · Estilos globales del shell
+// -----------------------------------------------------------------------------
+//  La paleta y los tokens de tema viven en src/theme/variables.scss.
+//  Aquí solo: tipografía, menú lateral admin y simbología de marca.
+// =============================================================================
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../assets/font/Raleway.ttf");
+}
+
+:root {
+  --ion-font-family: 'Raleway';
+}
+
+// -----------------------------------------------------------------------------
+//  Menú lateral (administración)
+// -----------------------------------------------------------------------------
+ion-menu {
+  --width: 260px;
+  --background: var(--nv-negro-cine);
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
+}
+
+ion-menu ion-content {
+  --background: var(--nv-negro-cine);
+}
+
+ion-menu ion-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+ion-menu ion-list {
+  background: transparent !important;
+  padding-bottom: 4px;
+}
+
+ion-menu ion-list:not(:last-child) {
+  border-bottom: 1px solid var(--nv-grafito);
+}
+
+ion-menu ion-item {
+  --background: transparent;
+  --color: var(--nv-gris-niebla);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+ion-menu ion-item:hover {
+  --background: var(--nv-carbon);
+  cursor: pointer;
+}
+
+// Encabezados de sección del menú — etiqueta corta en rojo Netview.
+.header-label {
+  color:          var(--color-netview) !important;
+  font-size:      11px;
+  font-weight:    700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top:     8px;
+}
+
+// Íconos de los ítems del menú.
+.item-icon {
+  color:        var(--color-netview);
+  font-size:    20px;
+  margin-right: 12px;
+}
+
+.item-icon-logout {
+  color:        var(--ion-color-danger);
+  font-size:    20px;
+  margin-right: 12px;
+}
+
+// Logo en el encabezado del menú admin.
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 8px;
+}
+
+.menu-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.menu-titulo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+// =============================================================================
+//  SIMBOLOGÍA · señales visuales de rol, tipo de contenido y estado.
+//  Clases utilitarias reutilizables en cualquier plantilla.
+// =============================================================================
+
+// ── Base común de las insignias ──────────────────────────────────────────────
+.nv-badge {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            4px;
+  font-size:      10px;
+  font-weight:    700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding:        3px 9px;
+  border-radius:  6px;
+  line-height:    1;
+  white-space:    nowrap;
+}
+
+// ── Símbolos de rol y acceso ─────────────────────────────────────────────────
+// Administrador → insignia en Rojo Netview.
+.nv-badge--admin {
+  background: var(--nv-rojo);
+  color:      #ffffff;
+}
+
+// Cliente → usuario suscriptor, insignia en negro cine.
+.nv-badge--cliente {
+  background: var(--nv-negro-cine);
+  color:      #ffffff;
+  border:     1px solid var(--nv-grafito);
+}
+
+// Contenido protegido → sección que requiere sesión / permiso de rol.
+.nv-badge--protegido {
+  background: transparent;
+  color:      var(--nv-rojo);
+  border:     1px solid var(--nv-rojo);
+}
+
+// ── Símbolos de tipo de contenido ────────────────────────────────────────────
+.nv-badge--pelicula {  // Película · tipo Movie
+  background: var(--nv-negro-cine);
+  color:      #ffffff;
+  border:     1px solid var(--nv-grafito);
+}
+
+.nv-badge--serie {     // Serie · tipo Series
+  background: var(--nv-rojo);
+  color:      #ffffff;
+}
+
+.nv-badge--kids {      // Kids · catálogo infantil
+  background: var(--nv-info);
+  color:      #ffffff;
+}
+
+// ── Símbolos de estado y notificación ────────────────────────────────────────
+// Punto de color que acompaña (nunca sustituye) al texto del mensaje.
+.nv-estado {
+  display:     inline-flex;
+  align-items: center;
+  gap:         7px;
+  font-size:   13px;
+  color:       var(--ion-text-color);
+}
+
+.nv-estado::before {
+  content:       '';
+  width:         9px;
+  height:        9px;
+  border-radius: 50%;
+  flex-shrink:   0;
+}
+
+.nv-estado--exito::before       { background: var(--nv-exito); }
+.nv-estado--advertencia::before { background: var(--nv-advertencia); }
+.nv-estado--error::before       { background: var(--nv-peligro); }
+.nv-estado--info::before        { background: var(--nv-info); }
