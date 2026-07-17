@@ -24,7 +24,7 @@ class Episode extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'episodes';
+        return 'episode';
     }
 
     /**

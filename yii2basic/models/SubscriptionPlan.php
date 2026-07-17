@@ -22,7 +22,7 @@ class SubscriptionPlan extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'subscription_plans';
+        return 'subscription_plan';
     }
 
     /**

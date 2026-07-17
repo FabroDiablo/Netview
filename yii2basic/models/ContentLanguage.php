@@ -28,7 +28,7 @@ class ContentLanguage extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'content_languages';
+        return 'content_language';
     }
 
     /**

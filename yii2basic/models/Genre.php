@@ -22,7 +22,7 @@ class Genre extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'genres';
+        return 'genre';
     }
 
     /**

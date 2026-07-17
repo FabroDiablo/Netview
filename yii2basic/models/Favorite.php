@@ -22,7 +22,7 @@ class Favorite extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'favorites';
+        return 'favorite';
     }
 
 

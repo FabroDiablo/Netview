@@ -23,7 +23,7 @@ class Season extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'seasons';
+        return 'season';
     }
 
     /**

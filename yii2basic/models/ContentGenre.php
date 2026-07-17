@@ -22,7 +22,7 @@ class ContentGenre extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'content_genres';
+        return 'content_genre';
     }
 
     public static function primaryKey()

@@ -47,3 +47,4 @@ Thumbs.db
 # Compiled CSS/JS
 *.min.css.map
 *.min.js.map
+config/db.php
